@@ -2,6 +2,8 @@
 
 Configuration files can be used with ChopChop : https://github.com/michelin/ChopChop
 
+Compiled versions are available here : https://github.com/michelin/ChopChop/releases
+
 To use :
 
 ```bash
