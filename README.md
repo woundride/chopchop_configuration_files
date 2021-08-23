@@ -5,13 +5,19 @@ Configuration files can be used with ChopChop : https://github.com/michelin/Chop
 To use :
 
 ```bash
-$ /gochopchop scan -u exch.csv -k -c exchange-server.yml
+$ ./gochopchop scan -u exch.csv -k -c exchange-server.yml
 ```
 
 or
 
 ```bash
-$ /gochopchop scan https://url -k -c exchange-server.yml
+$ ./gochopchop scan https://url -k -c exchange-server.yml
+```
+
+On Windows :
+
+```bash
+gochopchop.exe scan https://url -k -c exchange-server.yml
 ```
 
 For more informations : https://github.com/michelin/ChopChop/blob/master/README.md
