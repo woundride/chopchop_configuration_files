@@ -30,8 +30,12 @@ $ ./gochopchop scan -u exch.csv -k -c exchange-server.yml -e csv
 
 Options :
 
+
 -u : is used to specify specific url file (1 url per row)
+
 -k : to bypass ssl certificate verification
+
 -c : is used to specify specific configuration file
+
 
 For more informations : https://github.com/michelin/ChopChop/blob/master/README.md
