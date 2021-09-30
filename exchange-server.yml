@@ -12,6 +12,14 @@ plugins:
         tested: true
   - endpoint: "/owa/auth/logon.aspx"
     checks:
+      - name : Exchange 2019 CU 11
+        match:
+          - '15.2.986'
+        remediation: Verify to latest SU is installed
+        description: Exchange 2019 CU 11
+        status_code: 200
+        severity: "Informational"
+        tested: true
       - name : Exchange 2019 CU 10
         match:
           - '15.2.922'
@@ -20,13 +28,13 @@ plugins:
         status_code: 200
         severity: "Informational"
         tested: true
-      - name : Exchange 2019 CU 9
+      - name : Exchange 2019 CU 9 > vulnerable
         match:
           - '15.2.858'
-        remediation: Verify to latest SU is installed
-        description: Exchange 2019 CU 9
+        remediation: Upgrade Exchange in latest CU version
+        description: Exchange 2019 vulnerable version detected
         status_code: 200
-        severity: "Informational"
+        severity: "High"
         tested: true
       - name : Exchange 2019 CU 8 > vulnerable
         match:
@@ -108,6 +116,14 @@ plugins:
         status_code: 200
         severity: "High"
         tested: true
+      - name : Exchange 2016 CU 22
+        match:
+          - '15.1.2375'
+        remediation: Verify to latest SU is installed
+        description: Exchange 2016 CU 22
+        status_code: 200
+        severity: "Informational"
+        tested: true
       - name : Exchange 2016 CU 21
         match:
           - '15.1.2308'
@@ -116,13 +132,13 @@ plugins:
         status_code: 200
         severity: "Informational"
         tested: true
-      - name : Exchange 2016 CU 20
+      - name : Exchange 2016 CU 20 > vulnerable
         match:
           - '15.1.2242'
-        remediation: Verify to latest SU is installed
-        description: Exchange 2016 CU 20
+        remediation: Upgrade Exchange in latest CU version
+        description: Exchange 2016 vulnerable version detected
         status_code: 200
-        severity: "Informational"
+        severity: "High"
         tested: true
       - name : Exchange 2016 CU 19 > vulnerable
         match:
