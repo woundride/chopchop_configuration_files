@@ -12,6 +12,22 @@ plugins:
         tested: true
   - endpoint: "/owa/auth/logon.aspx"
     checks:
+      - name : Exchange IIS potentially directly exposed
+        headers:
+          - "Server:Microsoft-IIS"
+        remediation: Protect Web server with Reverse Proxy and WAF
+        description: Potentially no Reverse Proxy and / or WAF
+        status_code: 200
+        severity: "High"
+        tested: true
+      - name : Exchange 2019 CU 12
+        match:
+          - '15.2.1118'
+        remediation: Verify to latest SU is installed
+        description: Exchange 2019 CU 12
+        status_code: 200
+        severity: "Informational"
+        tested: true
       - name : Exchange 2019 CU 11
         match:
           - '15.2.986'
@@ -20,13 +36,13 @@ plugins:
         status_code: 200
         severity: "Informational"
         tested: true
-      - name : Exchange 2019 CU 10
+      - name : Exchange 2019 CU 10 > vulnerable
         match:
           - '15.2.922'
-        remediation: Verify to latest SU is installed
-        description: Exchange 2019 CU 10
+        remediation: Upgrade Exchange in latest CU version
+        description: Exchange 2019 vulnerable version detected
         status_code: 200
-        severity: "Informational"
+        severity: "High"
         tested: true
       - name : Exchange 2019 CU 9 > vulnerable
         match:
@@ -116,6 +132,14 @@ plugins:
         status_code: 200
         severity: "High"
         tested: true
+      - name : Exchange 2016 CU 23
+        match:
+          - '15.1.2507'
+        remediation: Verify to latest SU is installed
+        description: Exchange 2016 CU 23
+        status_code: 200
+        severity: "Informational"
+        tested: true
       - name : Exchange 2016 CU 22
         match:
           - '15.1.2375'
@@ -124,13 +148,13 @@ plugins:
         status_code: 200
         severity: "Informational"
         tested: true
-      - name : Exchange 2016 CU 21
+      - name : Exchange 2016 CU 21 > vulnerable
         match:
           - '15.1.2308'
         remediation: Verify to latest SU is installed
-        description: Exchange 2016 CU 21
+        description: Exchange 2016 vulnerable version detected
         status_code: 200
-        severity: "Informational"
+        severity: "High"
         tested: true
       - name : Exchange 2016 CU 20 > vulnerable
         match:
